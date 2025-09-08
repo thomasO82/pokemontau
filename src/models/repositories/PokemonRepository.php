@@ -25,11 +25,11 @@ class PokemonRepository extends Db
     static function getRandomPoke()
     {
         $sql = "SELECT * FROM pokemon where isCaptured = 0 order by RAND() LIMIT 1";
+        return self::request($sql)->fetch();
     }
     static function capturePoke($id)
     {
         $sql = "UPDATE pokemon SET isCaptured = 1 where id = $id";
-        return self::request($sql)->fetch();
     }
 
 
