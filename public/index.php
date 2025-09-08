@@ -1,6 +1,18 @@
 <?php 
+
+require_once '../core/Router.php';
+
 require_once '../src/controllers/MainController.php';
 
-$contro = new MainController();
+require_once '../src/controllers/CaptureController.php';
 
-$contro->index();
+require_once "../src/models/Db.php";
+
+require_once "../src/models/repositories/PokemonRepository.php";
+
+require_once '../src/models/Pokemon.php';
+
+
+$router = new Router();
+$router->start();
+

@@ -2,7 +2,12 @@
 
 class MainController {
     public function index(){
-        include_once '../views/home.php';
+    
+
+        $pokes = Pokemon::getAllPokeCaptured();
+        $pokeRandom = Pokemon::getRandomPoke();
         
+        include_once '../views/home.php';
+
     }
 }
