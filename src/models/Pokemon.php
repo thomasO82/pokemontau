@@ -1,43 +1,38 @@
 <?php 
 
 class Pokemon extends PokemonRepository {
-    private int $id;
     private string $name;
     private bool $isCaptured;
+    private int $id;
 
-    public function __construct(string $_name, bool $_isCaptured, ?int $_id = null) {
-        $this->id = $_id;
-        $this->name = $_name;
-        $this->isCaptured = $_isCaptured;
+    public function __construct($name, $isCaptured, $id = null) {
+        $this->setName($name);
+        $this->setIsCaptured($isCaptured);
+        $this->setId($id);
     }
 
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    public function getName()
-    {
+    public function getName(){
         return $this->name;
     }
 
-    public function setName($name)
-    {
+    public function setName($name){
         $this->name = $name;
     }
 
-    public function getIsCaptured()
-    {
+    public function getIsCaptured(){
         return $this->isCaptured;
     }
 
-    public function setIsCaptured($isCaptured)
-    {
+    public function setIsCaptured($isCaptured){
         $this->isCaptured = $isCaptured;
     }
+
+    public function getId(){
+        return $this->id;
+    }
+
+    public function setId($id){
+        $this->id = $id;
+    }
+    
 }

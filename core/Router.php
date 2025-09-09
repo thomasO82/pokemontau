@@ -1,27 +1,26 @@
 <?php
 
 class Router {
-    public function start (){
+    public function start(){
         try {
-            $uri = $_SERVER['REQUEST_URI'];
-            if ($uri != "/") {
-
-                $instanceContro = ucfirst(explode('/', $uri)[1]."Controller");
-                if (class_exists($instanceContro)) {
-                    $controller = new $instanceContro();
-                    $controller->index();
+            $uri = $_SERVER['REQUEST_URI']; 
+            if ($uri != '/') {
+                $controller = ucfirst(explode('/',$uri)[1].'Controller'); 
+                if (class_exists($controller)) { 
+                    $instanceController = new $controller();
+                    $instanceController->index();
                 }else{
-                    echo "404";
+                    echo '404';
                 }
             }else{
-                $instanceContro = new MainController();
-                $instanceContro->index();
+                $instanceController = new MainController();
+                $instanceController->index();
             }
-
-        } catch (Exception $e) {
-        
-            echo $e->getMessage();
+           
+        } catch (Exception $err) {
+            echo $err->getMessage();
             die;
         }
     }
 }
+
