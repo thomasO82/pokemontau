@@ -6,6 +6,8 @@ require_once '../src/controllers/MainController.php';
 
 require_once '../src/controllers/CaptureController.php';
 
+require_once '../src/controllers/ReleaseController.php';
+
 require_once "../src/models/Db.php";
 
 require_once "../src/models/repositories/PokemonRepository.php";

@@ -19,8 +19,6 @@ class Pokemon extends PokemonRepository {
     public function setId($id)
     {
         $this->id = $id;
-
-        return $this;
     }
 
     public function getName()
@@ -31,8 +29,6 @@ class Pokemon extends PokemonRepository {
     public function setName($name)
     {
         $this->name = $name;
-
-        return $this;
     }
 
     public function getIsCaptured()
@@ -43,7 +39,5 @@ class Pokemon extends PokemonRepository {
     public function setIsCaptured($isCaptured)
     {
         $this->isCaptured = $isCaptured;
-
-        return $this;
     }
 }

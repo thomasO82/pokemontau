@@ -3,12 +3,18 @@
 class MainController {
     public function index(){
     
-
+        $pokeCaptured = [];
         $pokes = Pokemon::getAllPokeCaptured();
-        $pokeRandom = Pokemon::getRandomPoke();
+        if ($pokes != null) {
+            foreach($pokes as $poke){
+            $pokTemp = new Pokemon($poke['name'], $poke["isCaptured"], $poke['id']);
+            array_push($pokeCaptured, $pokTemp);
+            }
+        }
 
-        var_dump($pokes);
-        var_dump($pokeRandom);
+        $pokeRandom = Pokemon::getRandomPoke();
+        $pokeAleat = new Pokemon($pokeRandom['name'], $pokeRandom["isCaptured"], $pokeRandom['id']);
+        
         
         include_once '../views/home.php';
 

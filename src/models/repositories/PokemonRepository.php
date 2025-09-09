@@ -30,6 +30,13 @@ class PokemonRepository extends Db
     static function capturePoke($id)
     {
         $sql = "UPDATE pokemon SET isCaptured = 1 where id = $id";
+        self::request($sql);
+    }
+
+        static function releasePoke($id)
+    {
+        $sql = "UPDATE pokemon SET isCaptured = 0 where id = $id";
+        self::request($sql);
     }
 
 

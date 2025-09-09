@@ -4,6 +4,7 @@ class CaptureController
 {
     public function index()
     {
-        echo "Capture controller is found";
+       Pokemon::capturePoke($_POST['id']);
+       header("Location: /");
     }
 }
